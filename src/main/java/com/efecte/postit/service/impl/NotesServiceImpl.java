@@ -8,6 +8,7 @@ import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,7 +44,7 @@ public class NotesServiceImpl implements NotesService {
 
     @Override
     public List<NoteDTO> list() {
-        List<NoteDTO> notes = null;
+        List<NoteDTO> notes = new ArrayList<>();
         List<Note> notesList = notesRepository.findAll();
         if (!notesList.isEmpty())
             notes = notesList.stream().map(note -> new NoteDTO(note.getId(), note.getNote())).collect(Collectors.toList());
