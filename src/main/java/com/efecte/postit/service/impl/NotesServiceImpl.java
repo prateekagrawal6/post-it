@@ -24,11 +24,13 @@ public class NotesServiceImpl implements NotesService {
         return getNoteDTO(_note);
     }
 
+
     @Override
     public NoteDTO get(@NotNull Long id) {
         Note note = notesRepository.getById(id);
         return getNoteDTO(note);
     }
+
 
     @Override
     public NoteDTO update(@NotNull NoteDTO note) {
@@ -36,11 +38,13 @@ public class NotesServiceImpl implements NotesService {
         return getNoteDTO(_note);
     }
 
+
     @Override
     public String delete(@NotNull Long id) {
         notesRepository.deleteById(id);
         return "Deleted Successfully";
     }
+
 
     @Override
     public List<NoteDTO> list() {

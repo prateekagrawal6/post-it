@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.efecte.postit"},{"l":"com.efecte.postit.controller"},{"l":"com.efecte.postit.dto"},{"l":"com.efecte.postit.exception"},{"l":"com.efecte.postit.model"},{"l":"com.efecte.postit.repository"},{"l":"com.efecte.postit.service"},{"l":"com.efecte.postit.service.impl"}];updateSearchResults();

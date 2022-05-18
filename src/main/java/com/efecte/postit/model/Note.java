@@ -8,6 +8,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * Note Entity Class
+ */
 @Entity
 @Setter
 @Getter

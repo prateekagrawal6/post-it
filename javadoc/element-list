@@ -1,0 +1,8 @@
+com.efecte.postit
+com.efecte.postit.controller
+com.efecte.postit.dto
+com.efecte.postit.exception
+com.efecte.postit.model
+com.efecte.postit.repository
+com.efecte.postit.service
+com.efecte.postit.service.impl

@@ -11,15 +11,26 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * NotesController to handle or control the requests for a Post (Note)
+ */
 @RestController
 @RequestMapping("note")
 @Slf4j
 @CrossOrigin(origins = "http://localhost:4200")
 public class NotesController {
 
+    /**
+     * notesService bean to access the service
+     */
     @Autowired
     NotesService notesService;
 
+    /**
+     * create method to handle a HTTPPost request of a Post (Note) creation
+     * @param noteDTO as a parameter
+     * @return  returns a response entity with NoteDTO
+     */
     @PostMapping("/create")
     ResponseEntity<NoteDTO> create(@RequestBody NoteDTO noteDTO) {
         log.info("Create request received with data {}", noteDTO);
@@ -28,6 +39,11 @@ public class NotesController {
         return new ResponseEntity<>(note, HttpStatus.CREATED);
     }
 
+    /**
+     * get method to handle a HTTPGet request to fetch a Post (Note)
+     * @param id id as a parameter
+     * @return  returns a response entity with NoteDTO
+     */
     @GetMapping("{id}")
     ResponseEntity<NoteDTO> get(@NotNull @PathVariable("id") long id) {
         log.info("Get request received with data {}", id);
@@ -36,6 +52,11 @@ public class NotesController {
         return new ResponseEntity<>(note, HttpStatus.OK);
     }
 
+    /**
+     * update method to handle HTTPPut request of a Post (Note)
+     * @param noteDTO noteDTO as a parameter
+     * @return  returns an updated NoteDTO
+     */
     @PutMapping("update")
     ResponseEntity<NoteDTO> update(@NotNull @RequestBody NoteDTO noteDTO) {
         log.info("Update request received with data {}", noteDTO);
@@ -44,6 +65,11 @@ public class NotesController {
         return new ResponseEntity<>(note, HttpStatus.OK);
     }
 
+    /**
+     * delete method to handle HTTPDelete request of a Post (Note)
+     * @param id id as a parameter
+     * @return  returns a response entity with an HttpStatus
+     */
     @DeleteMapping("{id}")
     ResponseEntity<HttpStatus> delete(@NotNull @PathVariable("id") long id) {
         log.info("Delete request received with data {}", id);
@@ -52,6 +78,10 @@ public class NotesController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    /**
+     * deleteAll method to handle HTTPDelete request of a Post (Note)
+     * @return returns a response entity with an HttpStatus
+     */
     @DeleteMapping("/")
     ResponseEntity<HttpStatus> deleteAll() {
         log.info("Delete All request received");
@@ -60,6 +90,10 @@ public class NotesController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    /**
+     * list method to handle HTTPGet request of a Post (Note)
+     * @return  returns a response entity with a list of NoteDTO
+     */
     @GetMapping("/")
     ResponseEntity<List<NoteDTO>> list() {
         ResponseEntity<List<NoteDTO>> response;
