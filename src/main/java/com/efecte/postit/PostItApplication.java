@@ -11,6 +11,7 @@ public class PostItApplication {
 
     /**
      * Main method for JVM to trigger the application
+     *
      * @param args String array args.
      */
     public static void main(String[] args) {

@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("note")
 @Slf4j
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class NotesController {
 
     /**
@@ -28,8 +28,9 @@ public class NotesController {
 
     /**
      * create method to handle a HTTPPost request of a Post (Note) creation
+     *
      * @param noteDTO as a parameter
-     * @return  returns a response entity with NoteDTO
+     * @return returns a response entity with NoteDTO
      */
     @PostMapping("/create")
     ResponseEntity<NoteDTO> create(@RequestBody NoteDTO noteDTO) {
@@ -41,8 +42,9 @@ public class NotesController {
 
     /**
      * get method to handle a HTTPGet request to fetch a Post (Note)
+     *
      * @param id id as a parameter
-     * @return  returns a response entity with NoteDTO
+     * @return returns a response entity with NoteDTO
      */
     @GetMapping("{id}")
     ResponseEntity<NoteDTO> get(@NotNull @PathVariable("id") long id) {
@@ -54,8 +56,9 @@ public class NotesController {
 
     /**
      * update method to handle HTTPPut request of a Post (Note)
+     *
      * @param noteDTO noteDTO as a parameter
-     * @return  returns an updated NoteDTO
+     * @return returns an updated NoteDTO
      */
     @PutMapping("update")
     ResponseEntity<NoteDTO> update(@NotNull @RequestBody NoteDTO noteDTO) {
@@ -67,8 +70,9 @@ public class NotesController {
 
     /**
      * delete method to handle HTTPDelete request of a Post (Note)
+     *
      * @param id id as a parameter
-     * @return  returns a response entity with an HttpStatus
+     * @return returns a response entity with an HttpStatus
      */
     @DeleteMapping("{id}")
     ResponseEntity<HttpStatus> delete(@NotNull @PathVariable("id") long id) {
@@ -80,6 +84,7 @@ public class NotesController {
 
     /**
      * deleteAll method to handle HTTPDelete request of a Post (Note)
+     *
      * @return returns a response entity with an HttpStatus
      */
     @DeleteMapping("/")
@@ -92,7 +97,8 @@ public class NotesController {
 
     /**
      * list method to handle HTTPGet request of a Post (Note)
-     * @return  returns a response entity with a list of NoteDTO
+     *
+     * @return returns a response entity with a list of NoteDTO
      */
     @GetMapping("/")
     ResponseEntity<List<NoteDTO>> list() {
